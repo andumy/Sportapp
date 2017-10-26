@@ -29,11 +29,11 @@ if($db->query($sql) == TRUE){}
 $result = $db->query($sql);
 
 if($result->num_rows > 0){
-    include("../pages/dashboard.php");
+    header("Location: http://localhost/php/pages/dashboard.php");
 }
 else {
-    echo "login failed";
-    include("../../html/confirm.html");
+    header("Location: http://localhost");
+    
 }
 
 ?>

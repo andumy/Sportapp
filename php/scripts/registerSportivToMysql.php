@@ -1,8 +1,7 @@
 <html>
-    <head>
-
-    </head>
-    <body>
+<head>
+</head>
+<body>
 <?php
 
     $user = 'root';
@@ -48,9 +47,7 @@
         FOREIGN KEY (club) REFERENCES ".$tableCluburi."(Nume)
         )";
        
-    $sportiviInsert = "INSERT INTO ".$tableSportivi."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad)
-                        VALUES ('".$nume."','".$prenume."','".$sex."','".$club."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."')";
-
+  
 
     $result = $db->query("SHOW TABLES LIKE '".$tableSportivi."'");   
 
@@ -64,26 +61,23 @@
             }
         
         
-        
+    $sportiviInsert = "INSERT INTO ".$tableSportivi."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad)
+                        VALUES ('".$nume."','".$prenume."','".$sex."','".$club."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."')";
+    
 
-    if($db->query($sportiviInsert)==TRUE) {}
+    if($db->query($sportiviInsert)==TRUE) {
+        header("Location: http://localhost/php/pages/listSportivi.php");
+        exit;
+    }
     else echo "insertion failed <br>".$db->error."<br>";
+    
 
 
-    $sql = "SELECT * FROM ".$tableSportivi;
-    $result = $db->query($sql);
-
-    if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-    echo  $row["sportivID"]. "  " . $row["nume"]. "  " . $row["prenume"]. "  " . $row["sex"]."  " . $row["club"]."  " . $row["ziNastere"]."  " . $row["greutate"]."  " . $row["gradval"]."  " . $row["grad"]."<br>";
-    }
-    } else {
-    echo "<br> 0 results";
-
-    }
+    
 ?>
-<a href="../index.html">back</a>
-</body>
 
+<form action="../pages/listSportivi.php">
+    <input type="submit" name="back" value="Back">
+</form>
+</body>
 </html>

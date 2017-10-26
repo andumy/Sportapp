@@ -2,7 +2,11 @@
 <head>
 </head>
 <body>
-       login succes
+       <form action="listSportivi.php">
+           <input type="submit" name="listasportivi" value="Lista Sportivi">
+       </form>
+       
+
 </body>
 </html>
 

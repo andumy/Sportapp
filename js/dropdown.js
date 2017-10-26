@@ -13,7 +13,7 @@ function dropdownfct() {
        }
    }
 
-   xmlhttp.open('GET','../php/dropdownGet.php',true);
+   xmlhttp.open('GET','http://localhost/php/scripts/dropdownGet.php',true);
    xmlhttp.send();
 }
 window.onload = dropdownfct;

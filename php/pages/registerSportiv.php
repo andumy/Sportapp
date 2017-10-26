@@ -1,10 +1,10 @@
 <html>
 <head>
-<script src="../js/dropdown.js"></script>
+<script src="../../js/dropdown.js"></script>
 
 </head>
 <body>
-    <form action="registerSportivToMysql.php" method="POST">
+    <form action="../scripts/registerSportivToMysql.php" method="POST">
           Nume </br>
         <input type="text" name="nume">
     </br> Prenume </br>
