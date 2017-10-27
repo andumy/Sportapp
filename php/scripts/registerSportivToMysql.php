@@ -4,35 +4,25 @@
 <body>
 <?php
 
-    $user = 'root';
-    $pass = '';
-    $tableSportivi = "sportivi";
-    $tableCluburi = "cluburi";
+require 'dbconnection.php';
+session_start();
 
-    $db = 'competition_database';
-
-    $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect");
 
 
     
     $nume = $prenume = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nume = test_input($_POST["nume"]);
-        $prenume = test_input($_POST["prenume"]);
-        $sex = test_input($_POST["sex"]);
-        $club = test_input($_POST["club"]);
-        $ziNastere = test_input($_POST["ziNastere"]);
-        $gradval = test_input($_POST["gradval"]);
-        $grad = test_input($_POST["grad"]);
-        $greutate = test_input($_POST["greutate"]);
+        $nume = $db->real_escape_string($_POST["nume"]);
+        $prenume = $db->real_escape_string($_POST["prenume"]);
+        $sex = $db->real_escape_string($_POST["sex"]);
+        $club = $db->real_escape_string($_POST["club"]);
+        $ziNastere = $db->real_escape_string($_POST["ziNastere"]);
+        $gradval = $db->real_escape_string($_POST["gradval"]);
+        $grad = $db->real_escape_string($_POST["grad"]);
+        $greutate = $db->real_escape_string($_POST["greutate"]);
     }
 
-    function test_input($data) {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
-    }
+    
     $sportiviCreate = "CREATE TABLE ".$tableSportivi."(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,

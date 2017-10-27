@@ -1,24 +1,16 @@
 
 <?php
-$user = 'root';
-$pass = '';
-$tableSportivi = "sportivi";
-$tableCluburi = "cluburi";
-$db = 'competition_database';
-$db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect");
+require 'dbconnection.php';
+session_start();
+
 
 $nume = $prenume = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user = test_input($_POST["user"]);
-    $pass = md5(test_input($_POST["pass"]));
+    $user = $db->real_escape_string($_POST["user"]);
+    $pass = md5($db->real_escape_string($_POST["pass"]));
 }
 
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
+
 
 $sql = " SELECT * FROM ".$tableCluburi." WHERE Nume='".$user."' AND parola='".$pass."'";
 
@@ -29,6 +21,7 @@ if($db->query($sql) == TRUE){}
 $result = $db->query($sql);
 
 if($result->num_rows > 0){
+
     header("Location: http://localhost/php/pages/dashboard.php");
 }
 else {

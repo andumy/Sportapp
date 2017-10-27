@@ -7,7 +7,8 @@
             <input type="text" name="user">
             <br>Password<br>
             <input type="password" name="pass">
-            
+            <br>Email<br>
+            <input type="mail" name="email">
             <br>
             <input type="submit" value="Register" name="register">
         </form>
