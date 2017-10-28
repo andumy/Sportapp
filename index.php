@@ -1,7 +1,9 @@
 <html>
 
 <head>
-
+    <?php
+    require 'php/scripts/homeRedirect.php';
+    ?>
 </head>
 <body>
     <form action="php/scripts/login.php" method="POST">
@@ -13,7 +15,7 @@
         <input type="submit" value="Login" name="login">
     </form>
         <a href="php/pages/registerCluburi.php"><button>Register</button></a>   
-    
+        <a href="php/pages/forget.php"><button>Forget Pasword</button></a>   
     
 </body>
 </html>

@@ -1,6 +1,9 @@
 <html>
 <head>
-<script src="../../js/dropdown.js"></script>
+    <?php
+    require '../scripts/loggedVerify.php';
+    ?>
+<!--<script src="../../js/dropdown.js"></script>-->
 
 </head>
 <body>
@@ -9,9 +12,9 @@
         <input type="text" name="nume">
     </br> Prenume </br>
         <input type="text" name="prenume">
-    </br> Club </br>
+    <!--</br> Club </br>
     <select name="club" id="club">
-    </select>
+    </select>-->
     </br> 
         M &nbsp; F </br>
         <input type="radio" name="sex" value="M">    

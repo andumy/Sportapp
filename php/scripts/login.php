@@ -12,20 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-$sql = " SELECT * FROM ".$tableCluburi." WHERE Nume='".$user."' AND parola='".$pass."'";
+$sql = " SELECT * FROM ".$tableCluburi." WHERE Nume='".$user."' AND parola='".$pass."' AND active='1'";
 
-if($db->query($sql) == TRUE){}
-    else{
-        echo $db->error;
-    }
+
 $result = $db->query($sql);
 
 if($result->num_rows > 0){
-
     header("Location: http://localhost/php/pages/dashboard.php");
+    $_SESSION['user']=$user;
+    $_SESSION['logged']=1;
+    
 }
 else {
-    header("Location: http://localhost");
+    $_SESSION['message']="Cont inactiv sau inexistent";
+    header("Location: http://localhost/php/pages/error.php");
     
 }
 

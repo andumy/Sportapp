@@ -1,5 +1,8 @@
 <html>
 <head>
+    <?php
+    require '../scripts/loggedVerify.php';
+    ?>
 </head>
 <body>
 <?php
@@ -14,7 +17,7 @@
     $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect");
 
 
-$sql = "SELECT * FROM ".$tableSportivi;
+$sql = "SELECT * FROM ".$tableSportivi." WHERE club='".$_SESSION['mail']."'";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
@@ -28,11 +31,16 @@ $sql = "SELECT * FROM ".$tableSportivi;
 
     }
 ?>
-<form action="registerSportiv.php">
-           <input type="submit" name="inregistraresportivi" value="Inregistrare Sportivi">
-</form>
-<form action="dashboard.php">
-           <input type="submit" name="dashboard" value="Back">
-</form>
+<a href="registerSportiv.php">
+    <button>
+        Inregistrare Sportivi
+    </button>
+</a>
+<a href="http://localhost/php/pages/dashboard.php">
+    <button>
+        Back
+    </button>
+</a>
+
 </body>
 </html>

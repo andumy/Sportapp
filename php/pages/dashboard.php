@@ -1,10 +1,24 @@
 <html>
 <head>
+    <?php
+    require '../scripts/loggedVerify.php';
+    ?>
 </head>
 <body>
-       <form action="listSportivi.php">
-           <input type="submit" name="listasportivi" value="Lista Sportivi">
-       </form>
+    </br>
+<a href="listSportivi.php">
+    <button>
+       Lista Sportivi
+    </button>
+</a>
+
+</br>
+<a href="http://localhost/php/scripts/logout.php">
+    <button>
+        Log Out
+    </button>
+</a>
+      
        
 
 </body>
