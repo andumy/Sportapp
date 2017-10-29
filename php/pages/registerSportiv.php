@@ -35,4 +35,9 @@
 
     </form>
 </body>
+<a href="http://localhost/php/pages/listSportivi.php">
+    <button>
+        Back
+    </button>
+</a>
 </html>

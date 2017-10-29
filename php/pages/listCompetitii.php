@@ -9,7 +9,7 @@
 <body>
 <?php
 
- 
+   
 
 
 $sql = "SELECT * FROM ".$tableSportivi." WHERE club='".$_SESSION['mail']."'";
@@ -26,9 +26,9 @@ $sql = "SELECT * FROM ".$tableSportivi." WHERE club='".$_SESSION['mail']."'";
 
     }
 ?>
-<a href="registerSportiv.php">
+<a href="registerCompetitie.php">
     <button>
-        Inregistrare Sportivi
+        Creeare Competitie
     </button>
 </a>
 <a href="http://localhost/php/pages/dashboard.php">

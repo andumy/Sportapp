@@ -12,6 +12,13 @@
     </button>
 </a>
 
+  </br>
+<a href="listCompetitii.php">
+    <button>
+       Lista Competitii
+    </button>
+</a>
+
 </br>
 <a href="http://localhost/php/scripts/logout.php">
     <button>
