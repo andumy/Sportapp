@@ -2,6 +2,7 @@
 <head>
     <?php
     require '../scripts/loggedVerify.php';
+    require '../scripts/sessionActivation.php';
     ?>
 </head>
 <body>

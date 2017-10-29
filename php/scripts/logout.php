@@ -1,7 +1,7 @@
 
 <?php
 require 'dbconnection.php';
-session_start();
+require 'sessionActivation.php';
 
     $_SESSION['user']=NULL;
     $_SESSION['logged']=0;

@@ -1,7 +1,7 @@
 <?php
 
 require 'dbconnection.php';
-session_start();
+require 'sessionActivation.php';
 
 
 
@@ -36,8 +36,12 @@ session_start();
 
     $result = $db->query("SHOW TABLES LIKE '".$tableSportivi."'");   
 
-        if($result->num_rows > 0){}
-            else {
+        if($result->num_rows > 0)
+        {
+
+        }
+            else 
+            {
                 if($db->query($sportiviCreate)==TRUE){}
                     else{
                         echo "creation failed <br>". $db->error."<br>";

@@ -1,7 +1,7 @@
 
 <?php
 require 'dbconnection.php';
-session_start();
+require 'sessionActivation.php';
 
 
 if(isset($_GET['email'])&&!empty($_GET['email'])&&isset($_GET['hash'])&&!empty($_GET['hash']))

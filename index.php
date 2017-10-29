@@ -3,6 +3,7 @@
 <head>
     <?php
     require 'php/scripts/homeRedirect.php';
+    require 'php/scripts/sessionActivation.php';
     ?>
 </head>
 <body>

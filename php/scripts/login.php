@@ -1,7 +1,7 @@
 
 <?php
 require 'dbconnection.php';
-session_start();
+require 'sessionActivation.php';
 
 
 $nume = $prenume = "";

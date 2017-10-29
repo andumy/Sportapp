@@ -1,5 +1,8 @@
 <html>
 <head>
+<?php
+require '../scripts/sessionActivation.php';
+?>
 </head>
 <body>
         <form action="../scripts/sendRecoverMail.php" method="POST">

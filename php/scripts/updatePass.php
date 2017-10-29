@@ -2,7 +2,7 @@
 <?php
 
 require 'dbconnection.php';
-session_start();
+require 'sessionActivation.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

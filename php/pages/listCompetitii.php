@@ -3,29 +3,42 @@
     <?php
     require '../scripts/loggedVerify.php';
     require '../scripts/dbconnection.php';
-    session_start();
+    require '../scripts/sessionActivation.php';
     ?>
 </head>
 <body>
 <?php
 
    
+$result = $db->query("SHOW TABLES LIKE '".$tableCompetitii."'");   
+
+        if($result->num_rows > 0)
+        {
+            $sql = "SELECT * FROM ".$tableCompetitii;
+            $result = $db->query($sql);
+        
+            if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+        
+            echo  $row["nume"]. "  " . $row["organizator"]. "  " . $row["data"]."<br>";
+            }
+            } else {
+            echo "<br> 0 results";
+        
+            }
+        
+        }
+            else 
+            {
+                echo "<br> 0 results";
+            }
 
 
-$sql = "SELECT * FROM ".$tableSportivi." WHERE club='".$_SESSION['mail']."'";
-    $result = $db->query($sql);
-
-    if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-
-    echo  $row["sportivID"]. "  " . $row["nume"]. "  " . $row["prenume"]. "  " . $row["sex"]."  " . $row["club"]."  " . $row["ziNastere"]."  " . $row["greutate"]."  " . $row["gradval"]."  " . $row["grad"]."<br>";
-    }
-    } else {
-    echo "<br> 0 results";
-
-    }
 ?>
+
+
+
 <a href="registerCompetitie.php">
     <button>
         Creeare Competitie

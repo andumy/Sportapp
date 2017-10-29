@@ -1,6 +1,6 @@
 <?php
 require 'dbconnection.php';
-session_start();
+require 'sessionActivation.php';
 
 
 if (isset($_GET['dropdownValues']))

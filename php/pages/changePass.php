@@ -2,7 +2,7 @@
 <head>
     <?php
         require '../scripts/dbconnection.php';
-        session_start();
+        require '../scripts/sessionActivation.php';
     ?>
 </head>
 <body>
