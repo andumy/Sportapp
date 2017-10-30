@@ -60,7 +60,7 @@ $result = $db->query("SHOW TABLES LIKE '".$tableCluburi."'");
 $msg = "Iti multumim pentru ca ti-ai facut cont pe Sportapp
 
 Pentru a-ti activa contul te rugam sa accesezi urmatorul link:
-http://localhost/php/scripts/activare.php?email='".$mail."'&hash='".$hash."'";
+http://localhost/php/scripts/activare.php?email=".$mail."&hash=".$hash;
 
 if($db->query($sql) == TRUE)
 {

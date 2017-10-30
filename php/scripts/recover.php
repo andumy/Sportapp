@@ -6,8 +6,8 @@ require 'sessionActivation.php';
 
 if(isset($_GET['email'])&&!empty($_GET['email'])&&isset($_GET['hash'])&&!empty($_GET['hash']))
 {
-    $mail=$db->escape_string(substr($_GET["email"], 1, -1));
-    $hash=$db->escape_string(substr($_GET["hash"], 1, -1));
+    $mail=$db->escape_string($_GET["email"]);
+    $hash=$db->escape_string($_GET["hash"]);
    
     
     $sql = "SELECT * FROM ".$tableCluburi." WHERE mail='".$mail."' AND hash='".$hash."'";

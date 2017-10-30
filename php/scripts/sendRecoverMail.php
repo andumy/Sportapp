@@ -16,7 +16,7 @@ if($results->num_rows > 0)
     $hash = $row['hash'];
     $msg = "Acceseaza urmatorul link pentru a-ti putea recupera parola:
     
-    http://localhost/php/scripts/recover.php?email='".$mail."'&hash='".$hash."'";
+    http://localhost/php/scripts/recover.php?email=".$mail."&hash=".$hash."";
 
     mail($mail,"Recuperare parola Sportapp",$msg);
     

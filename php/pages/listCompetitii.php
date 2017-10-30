@@ -21,7 +21,16 @@ $result = $db->query("SHOW TABLES LIKE '".$tableCompetitii."'");
             // output data of each row
             while($row = $result->fetch_assoc()) {
         
-            echo  $row["nume"]. "  " . $row["organizator"]. "  " . $row["data"]."<br>";
+            echo  $row["nume"]. "  " . $row["organizator"]. "  " . $row["data"];
+                if ($row["organizator"]==$_SESSION['user'])
+                {
+                    echo "<a href='http://localhost/php/pages/editCompetition.php?hash=".$row['hash']."'>
+                            <button>
+                                Edit
+                            </button>
+                          </a>";
+                }
+            echo "</br>";
             }
             } else {
             echo "<br> 0 results";

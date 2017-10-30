@@ -11,7 +11,7 @@ require 'sessionActivation.php';
         $nume = $db->real_escape_string($_POST["nume"]);
         $data = $db->real_escape_string($_POST["data"]);
         $organizator = $_SESSION['user'];
-        
+        $hash = md5(rand(0,1000));
     }
 
     
@@ -20,6 +20,7 @@ require 'sessionActivation.php';
         nume varchar(50) NOT NULL,
         organizator varchar(50) NOT NULL,
         data date NOT NULL,
+        hash varchar(50) NOT NULL,
         PRIMARY KEY (competitieID)
         )";
        
@@ -41,8 +42,8 @@ require 'sessionActivation.php';
             }
         
      
-    $competitiiInsert = "INSERT INTO ".$tableCompetitii."(nume,organizator,data)
-                        VALUES ('".$nume."','".$organizator."','".$data."')";
+    $competitiiInsert = "INSERT INTO ".$tableCompetitii."(nume,organizator,data,hash)
+                        VALUES ('".$nume."','".$organizator."','".$data."','".$hash."')";
     
 
     if($db->query($competitiiInsert)==TRUE) {
