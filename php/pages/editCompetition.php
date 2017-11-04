@@ -25,4 +25,10 @@
         Back
     </button>
 </a>
+<?php
+ $link = "<form action='deleteCompetition.php?hash=".$_GET['hash']."' method='POST'>";
+ echo $link;
+?>
+    <input type="submit" name="Delete" value="Delete">
+</form>
 </html>

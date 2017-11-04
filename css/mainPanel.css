@@ -1,0 +1,83 @@
+body{
+    font-family: Open sans;
+    color:  #545454 !important;
+}
+.background{
+    background-image: url("../assets/loginBG.png");
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+.logo{
+    padding-top:16vw;
+    padding-bottom: 15vw;
+    width:100%;
+    height: auto;
+    color: #C94B4B;
+}
+input{
+    margin: 5px 5px;
+    padding: 5px 0px;
+    background-color: transparent;
+    border: 0px solid transparent;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #BBBBBB;
+    
+}
+input, select, textarea{
+    color: #BBBBBB !important;
+}
+
+textarea:focus, input:focus {
+    color:#BBBBBB;
+    outline: none;
+}
+textarea:visited, input:visited {
+    color:#BBBBBB;
+}
+textarea:active, input:active {
+    color:#BBBBBB;
+}
+.loginButton{
+    margin-top: 10%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4b134f+0,c94b4b+100 */
+    background: #4b134f; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #4b134f 0%, #c94b4b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b134f', endColorstr='#c94b4b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border: 0px solid transparent;
+    border-radius: 80px;
+    border: 0px solid transparent;
+}
+.loginButton:hover{
+    background: #250627; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #250627 0%, #8a2d2d 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #250627 0%,#8a2d2d 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #250627 0%,#8a2d2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#250627', endColorstr='#8a2d2d',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.register{
+    margin-top:10px; 
+    text-align: right;
+}
+a{
+    color: #545454 !important;
+}
+.forget{
+    margin-top:20px; 
+    text-align: right;
+}
+.mesaj{
+    margin-top: -5vw;
+    margin-bottom: 5vw;
+    text-align: center;
+    font-size: 30px;
+    
+}
+.divButon{
+    text-align: center;
+    color: #BBBBBB;
+    padding: 5px 0px;
+}

@@ -12,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = $db->real_escape_string($_POST["email"]);
 }
 
-
 $cluburiCreate = "CREATE TABLE ".$tableCluburi."(
     Nume varchar(50) NOT NULL,
     parola varchar(50) NOT NULL,
@@ -23,7 +22,6 @@ $cluburiCreate = "CREATE TABLE ".$tableCluburi."(
     PRIMARY KEY (Nume)
     )";
    
-
 
 $result = $db->query("SHOW TABLES LIKE '".$tableCluburi."'");   
 

@@ -20,7 +20,7 @@ if($results->num_rows > 0)
 
     mail($mail,"Recuperare parola Sportapp",$msg);
     
-    $_SESSION['message'] = "Un mail cu linkul de recuerare a fost trimis.";
+    $_SESSION['message'] = "Un mail cu linkul de recuperare a fost trimis.";
     header('location: http://localhost/php/pages/succes.php');
     exit;
 }

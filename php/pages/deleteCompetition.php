@@ -8,21 +8,19 @@
 </head>
 <body>
 <?php
-    $nume = $db->escape_string($_POST['nume']);
-    $data = $db->escape_string($_POST['data']);
     $hash = $db->escape_string($_GET['hash']);
     
-    $sql = "UPDATE ".$tableCompetitii." SET nume='".$nume."' , data='".$data."' WHERE hash='".$hash."'";
+    $sql = "DELETE FROM ".$tableCompetitii."  WHERE hash='".$hash."'";
     
     if($db->query($sql)==TRUE)
     {
-        $_SESSION['message'] = "Competitia a fost updatata";
+        $_SESSION['message'] = "Competitia a fost stearsa";
         header("Location: http://localhost/php/pages/succes.php");
         
     }
     else
     {   
-        $_SESSION['message'] = "Competitia nu a fost updatata. Va rugam reincercati";
+        $_SESSION['message'] = "Competitia nu a fost stearsa. Va rugam reincercati";
         header("Location: http://localhost/php/pages/error.php");
     }
 ?>
