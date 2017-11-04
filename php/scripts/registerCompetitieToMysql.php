@@ -48,7 +48,7 @@ require 'sessionActivation.php';
 
     if($db->query($competitiiInsert)==TRUE) {
          $_SESSION['message'] = "Adaugare reusita";
-         header("Location: http://localhost/php/pages/error.php");
+         header("Location: http://localhost/php/pages/succes.php");
     }
     else 
     {

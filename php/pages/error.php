@@ -39,7 +39,7 @@
 
                 <div class = "col-sm-4">
                      <a href = "http://localhost/php/pages/dashboard.php">
-                        <div class="loginButton">
+                        <div class="loginButton  divButon">
                             Back
                         </div>
                       </a>
