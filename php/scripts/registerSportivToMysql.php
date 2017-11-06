@@ -15,9 +15,10 @@ require 'sessionActivation.php';
         $gradval = $db->real_escape_string($_POST["gradval"]);
         $grad = $db->real_escape_string($_POST["grad"]);
         $greutate = $db->real_escape_string($_POST["greutate"]);
+        $hash = md5(rand(1,1000));
     }
 
-    
+  
     $sportiviCreate = "CREATE TABLE ".$tableSportivi."(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
@@ -27,7 +28,8 @@ require 'sessionActivation.php';
         ziNastere date NOT NULL,
         greutate int,
         gradval int,
-        grad varchar(1),
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi."(Nume)
         )";
@@ -50,8 +52,8 @@ require 'sessionActivation.php';
             }
         
      
-    $sportiviInsert = "INSERT INTO ".$tableSportivi."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad)
-                        VALUES ('".$nume."','".$prenume."','".$sex."','".$_SESSION['user']."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."')";
+    $sportiviInsert = "INSERT INTO ".$tableSportivi."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad,hash)
+                        VALUES ('".$nume."','".$prenume."','".$sex."','".$_SESSION['user']."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."','".$hash."')";
     
 
     if($db->query($sportiviInsert)==TRUE) {

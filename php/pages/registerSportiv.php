@@ -26,8 +26,8 @@
     </br>
         Grad &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;KYU  DAN </br>
         <input type="text" name="gradval">
-        <input type="radio" name="grad" value="K">    
-        <input type="radio" name="grad" value="D">
+        <input type="radio" name="grad" value="Kyu">    
+        <input type="radio" name="grad" value="Dan">
     </br> Greutate </br>
     <input type="text" name="greutate">
     </br>

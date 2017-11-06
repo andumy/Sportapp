@@ -1,14 +1,19 @@
 <html>
 
 <head>
-
+<!-- PHP SCRIPTS -->
     <?php
     require 'php/scripts/homeRedirect.php';
     require 'php/scripts/sessionActivation.php';
     ?>
+<!-- CSS & BOOTSTRAP -->
     <link rel = "stylesheet" type="text/css" href="css/mainPanel.css"></link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<!-- METALINKS -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    
 </head>
 <body class="background">
     <div class="container">
