@@ -31,7 +31,7 @@ require 'sessionActivation.php';
         grad varchar(4),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
-        FOREIGN KEY (club) REFERENCES ".$tableCluburi."(Nume)
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi."(Nume) ON UPDATE CASCADE
         )";
        
   

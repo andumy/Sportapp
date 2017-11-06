@@ -22,6 +22,7 @@ require 'sessionActivation.php';
         data date NOT NULL,
         hash varchar(50) NOT NULL,
         PRIMARY KEY (competitieID)
+        FOREIGN KEY (organizator) REFERENCES ".$tableCluburi."(Nume) ON UPDATE CASCADE
         )";
        
   

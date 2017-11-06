@@ -54,24 +54,28 @@
                                     {
                                         echo "
                                         <div class='row'>
-                                            <div class='col-sm-4'>
-                                                ".$row["nume"]." ".$row["prenume"]."
+                                            <div class='col-sm-5'>
+                                                ".$row['nume']." ".$row['prenume']."
                                             </div>
                                             <div class='col-sm-1'>
-                                            ".$row["gradval"]." ".$row["grad"]."
+                                                ".$row['sex']."
                                             </div>
                                             <div class='col-sm-1'>
-                                            ".$row["greutate"]." Kg
+                                            ".$row['gradval']." ".$row['grad']."
+                                            </div>
+                                            <div class='col-sm-1'>
+                                            ".$row['greutate']." Kg
                                             </div>
                                             <div class='col-sm-2'>
-                                            ".$row["ziNastere"]."
+                                            ".$row['ziNastere']."
                                             </div>
-                                            <div class='col-sm-2'>
+
+                                            <div class='col-sm-1'>
                                                 <a href='../pages/editSportiv.php?hash=".$row['hash']."'>
                                                     <img src='../../assets/Icons/SVG/Edit.svg' class='iconList'>
                                                 </a>
                                             </div>
-                                            <div class='col-sm-2'>
+                                            <div class='col-sm-1'>
                                                 <a href='../scripts/deleteSportiv.php?hash=".$row['hash']."'>
                                                     <img src='../../assets/Icons/SVG/Delete.svg' class='iconList'>
                                                 </a>
@@ -116,7 +120,7 @@
         <div class="col-sm-2" >
             <a href = "registerSportiv.php">
                 <div class="loginButton  divButon">
-                    Inregistrare Sportivi
+                    Register Athlete
                 </div>
             </a>
         </div>

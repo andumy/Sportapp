@@ -1,3 +1,30 @@
+input{
+    margin: 50px 5px;
+    padding: 5px 0px;
+    background-color: transparent;
+    border: 0px solid transparent;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid #BBBBBB;
+    
+}
+input, select, textarea{
+    color: #BBBBBB !important;
+}
+input, select, textarea{
+    color: #BBBBBB !important;
+}
+
+textarea:focus, input:focus {
+    color:#BBBBBB;
+    outline: none;
+}
+textarea:visited, input:visited {
+    color:#BBBBBB;
+}
+textarea:active, input:active {
+    color:#BBBBBB;
+}
 .background{
     background-image: url("../assets/loginBG.png");
     background-size: cover;
@@ -20,7 +47,7 @@
     margin-top: 1.5vw;
     width: 4vw;
     display: inline-block;
-    fill:#C94B4B;
+    fill:#BBBBBB;
 }
 .box{
     margin-top: 8vw;
@@ -30,7 +57,7 @@
     -webkit-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
     -moz-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
     box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
-    color:#C94B4B;
+    color:#BBBBBB;
     display:inline-block;
     text-align: center;
     background-color: #333333;
@@ -44,11 +71,11 @@
     background: -moz-linear-gradient(45deg, #4b134f 0%, #c94b4b 100%); 
     background: -webkit-linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); 
     background: linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); 
-    color:#333333;
-    fill:#333333;
+    color:#BBBBBB;
+    fill:#BBBBBB;
 }
 .box:hover .iconStyle{
-    fill:#333333;
+    fill:##BBBBBB;
 }
 .scrollBox{
     margin-top: 2vw;
@@ -111,13 +138,77 @@
     color: #BBBBBB;
     padding: 5px 0px;
 }
+.inpts{
+    display: none;
+}
+.gradType{
+    margin: 50px 5px;
+    padding: 5px 0px;
+    text-align: center;
+    color: #BABABA;
+    width: 100%;
+    height: 1.5vw;
+    -webkit-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    border-radius: 80px;
 
+}
+.gradTypeActive{
+    background: #4b134f; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #4b134f 0%, #c94b4b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b134f', endColorstr='#c94b4b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border: 0px solid transparent;
+    
+}
+.sexBox{
+    margin-top: 3vw;
+    width:100%;
+    height: auto;
+    -webkit-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    padding: 40px 40px;
+    fill: #BBBBBB;
+}
 
+.sexBoxActive{
+    background: #4b134f; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #4b134f 0%, #c94b4b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b134f', endColorstr='#c94b4b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    
+}
+.loginButton{
+    margin-top: 10%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4b134f+0,c94b4b+100 */
+    background: #333333; /* Old browsers */
+    border-radius: 80px;
+    -webkit-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);
+    border: 0px solid transparent;
+    color: #BBBBBB;
+}
+.topSpace{
+    margin-top: 5vw;
+}
+.loginButton:hover{
+    background: #4b134f; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #4b134f 0%, #c94b4b 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #4b134f 0%,#c94b4b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4b134f', endColorstr='#c94b4b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border: 0px solid transparent;
+    border-radius: 80px;
+}
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;
-    left: -100px;
-    }
+}
     
 ::-webkit-scrollbar-track {
     background-color: #444444;
