@@ -24,14 +24,14 @@ require 'sessionActivation.php';
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
         sex varchar(1) NOT NULL,
-        club varchar(50) NOT NULL , 
+        club int NOT NULL , 
         ziNastere date NOT NULL,
         greutate int,
         gradval int,
         grad varchar(4),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
-        FOREIGN KEY (club) REFERENCES ".$tableCluburi."(Nume) ON UPDATE CASCADE
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
        
   
@@ -53,17 +53,18 @@ require 'sessionActivation.php';
         
      
     $sportiviInsert = "INSERT INTO ".$tableSportivi."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad,hash)
-                        VALUES ('".$nume."','".$prenume."','".$sex."','".$_SESSION['user']."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."','".$hash."')";
+                        VALUES ('".$nume."','".$prenume."','".$sex."','".$_SESSION['id']."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."','".$hash."')";
     
 
     if($db->query($sportiviInsert)==TRUE) {
-         $_SESSION['message'] = "Adaugare reusita";
+         $_SESSION['message'] = "Succesfully register";
          header("Location: http://localhost/php/pages/error.php");
     }
     else 
     {
-        
-        $_SESSION['message'] = "Adaugare nereusita, va rugam reincercati";
+        echo $db->error;
+        exit;
+        $_SESSION['message'] = "Unsuccesfully register, please retry";
          header("Location: http://localhost/php/pages/error.php");
     }
 

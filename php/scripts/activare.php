@@ -18,17 +18,17 @@ if(isset($_GET['email'])&&!empty($_GET['email'])&&isset($_GET['hash'])&&!empty($
     {
         $sql = "UPDATE ".$tableCluburi." SET active='1' WHERE mail='".$mail."'";
         $db->query($sql);
-         $_SESSION['message']= "Contul dumneavoastra a fost activat";
+         $_SESSION['message']= "Your account is active now";
          header("Location: http://localhost/php/pages/succes.php");
     }
     else{
-         $_SESSION['message']= "Cont deja activat sau link eronat";
+         $_SESSION['message']= "Wrong link or already activated account";
          header("Location: http://localhost/php/pages/error.php");
     }
 }
 else
 {
-    $_SESSION['message']= "Link eronat";
+    $_SESSION['message']= "Wrong link";
    header("Location: http://localhost/php/pages/error.php");
 }
 

@@ -18,13 +18,18 @@ $sql = " SELECT * FROM ".$tableCluburi." WHERE Nume='".$user."' AND parola='".$p
 $result = $db->query($sql);
 
 if($result->num_rows > 0){
-    header("Location: http://localhost/php/pages/dashboard.php");
+    while($row=$result->fetch_assoc())
+    {
     $_SESSION['user']=$user;
+    $_SESSION['mail']=$row['mail'];
     $_SESSION['logged']=1;
-    
+    $_SESSION['hash'] = $row['hash'];
+    $_SESSION['id'] = $row['cluburiId'];
+    }
+    header("Location: http://localhost/php/pages/dashboard.php");
 }
 else {
-    $_SESSION['message']="Cont inactiv sau inexistent";
+    $_SESSION['message']="Wrong link or already activated account";
     header("Location: http://localhost/php/pages/error.php");
     
 }

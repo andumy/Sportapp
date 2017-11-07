@@ -45,7 +45,7 @@
 
                             if($result->num_rows > 0)
                             {
-                                $sql = "SELECT * FROM ".$tableSportivi." WHERE club='".$_SESSION['user']."'";
+                                $sql = "SELECT * FROM ".$tableSportivi." WHERE club='".$_SESSION['id']."'";
                                 $result = $db->query($sql);
                             
                                 if ($result->num_rows > 0) 
@@ -96,7 +96,7 @@
                                             
                                             <div class='col-sm-3'>
                                                 <div class='clubStyle'>
-                                                    ".$row['club']."
+                                                    ".$_SESSION['user']."
                                                 </div>
                                             </div>
                                         </div>

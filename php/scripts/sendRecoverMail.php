@@ -14,19 +14,19 @@ if($results->num_rows > 0)
     $row = $results->fetch_assoc();
     $mail = $row['mail'];
     $hash = $row['hash'];
-    $msg = "Acceseaza urmatorul link pentru a-ti putea recupera parola:
+    $msg = "Acces the following link to change your password
     
     http://localhost/php/scripts/recover.php?email=".$mail."&hash=".$hash."";
 
-    mail($mail,"Recuperare parola Sportapp",$msg);
+    mail($mail,"Recovery mail from Sportapp",$msg);
     
-    $_SESSION['message'] = "Un mail cu linkul de recuperare a fost trimis.";
+    $_SESSION['message'] = "A recovery link was sent to ".$mail.;
     header('location: http://localhost/php/pages/succes.php');
     exit;
 }
 else 
 {
-    $_SESSION['message'] = "Nu exista un cont care sa contina mailul sau userul anterior";
+    $_SESSION['message'] = "The account was not found";
     header('location: http://localhost/php/pages/error.php');
     exit;
 }

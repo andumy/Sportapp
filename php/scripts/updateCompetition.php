@@ -16,13 +16,13 @@
     
     if($db->query($sql)==TRUE)
     {
-        $_SESSION['message'] = "Competitia a fost updatata";
+        $_SESSION['message'] = "The competition was updated";
         header("Location: http://localhost/php/pages/succes.php");
         
     }
     else
     {   
-        $_SESSION['message'] = "Competitia nu a fost updatata. Va rugam reincercati";
+        $_SESSION['message'] = "The competition was not updated, please retry";
         header("Location: http://localhost/php/pages/error.php");
     }
 ?>

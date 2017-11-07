@@ -15,7 +15,7 @@ $sql = "UPDATE ".$tableCluburi." SET parola='".$pass."' WHERE mail='".$_SESSION[
 $results = $db->query($sql);
 
 
- $_SESSION['message']="Parola a fost updatata";
+ $_SESSION['message']="The password was succesfuly changed";
        header("Location: http://localhost/php/pages/succes.php");
        exit;
 

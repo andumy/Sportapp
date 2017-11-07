@@ -10,7 +10,7 @@ require 'sessionActivation.php';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nume = $db->real_escape_string($_POST["nume"]);
         $data = $db->real_escape_string($_POST["data"]);
-        $organizator = $_SESSION['user'];
+        $organizator = $_SESSION['id'];
         $hash = md5(rand(0,1000));
     }
 
@@ -18,11 +18,11 @@ require 'sessionActivation.php';
     $competitiiCreate = "CREATE TABLE ".$tableCompetitii."(
         competitieID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
-        organizator varchar(50) NOT NULL,
+        organizator int NOT NULL,
         data date NOT NULL,
         hash varchar(50) NOT NULL,
-        PRIMARY KEY (competitieID)
-        FOREIGN KEY (organizator) REFERENCES ".$tableCluburi."(Nume) ON UPDATE CASCADE
+        PRIMARY KEY (competitieID),
+        FOREIGN KEY (organizator) REFERENCES ".$tableCluburi." (cluburiId)
         )";
        
   
@@ -35,7 +35,10 @@ require 'sessionActivation.php';
         }
             else 
             {
-                if($db->query($competitiiCreate)==TRUE){}
+                if($db->query($competitiiCreate)==TRUE)
+                {
+
+                }
                     else{
                         echo "creation failed <br>". $db->error."<br>";
                     }
@@ -44,17 +47,18 @@ require 'sessionActivation.php';
         
      
     $competitiiInsert = "INSERT INTO ".$tableCompetitii."(nume,organizator,data,hash)
-                        VALUES ('".$nume."','".$organizator."','".$data."','".$hash."')";
+                        VALUES ('".$nume."','".$_SESSION['id']."','".$data."','".$hash."')";
     
 
     if($db->query($competitiiInsert)==TRUE) {
-         $_SESSION['message'] = "Adaugare reusita";
+        
+
+         $_SESSION['message'] = "Succesfully register";
          header("Location: http://localhost/php/pages/succes.php");
     }
     else 
     {
-        
-        $_SESSION['message'] = "Adaugare nereusita, va rugam reincercati";
+        $_SESSION['message'] = "Unsuccesfully register, please retry";
          header("Location: http://localhost/php/pages/error.php");
     }
 

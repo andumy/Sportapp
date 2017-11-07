@@ -13,13 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $cluburiCreate = "CREATE TABLE ".$tableCluburi."(
+    cluburiId int NOT NULL AUTO_INCREMENT,
     Nume varchar(50) NOT NULL,
     parola varchar(50) NOT NULL,
     Sportivi int NOT NULL,
     mail varchar(80) NOT NULL,
     hash varchar(50) NOT NULL,
     active int(1) NULL,
-    PRIMARY KEY (Nume)
+    PRIMARY KEY (cluburiId)
     )";
    
 
@@ -55,21 +56,21 @@ $result = $db->query("SHOW TABLES LIKE '".$tableCluburi."'");
         $sql = "INSERT INTO ".$tableCluburi."(Nume,parola,Sportivi,mail,hash,active)
         VALUES ('".$user."','".$pass."',0,'".$mail."','".$hash."','0')";
 
-$msg = "Iti multumim pentru ca ti-ai facut cont pe Sportapp
+$msg = "Thank you for registering on Sportapp
 
-Pentru a-ti activa contul te rugam sa accesezi urmatorul link:
+To activate your accound, acces the following link:
 http://localhost/php/scripts/activare.php?email=".$mail."&hash=".$hash;
 
 if($db->query($sql) == TRUE)
 {
-    mail($mail,'Confirmare de creeare cont pe Sportapp',$msg);
-    $_SESSION['message']="Contul dumneavoastra a fost creat. Accesati linkul primit pe mail pentru activare.";
+    mail($mail,'Welcome to Sportapp',$msg);
+    $_SESSION['message']="Your account was created. Please check your mail for the activation link.";
     header("Location: http://localhost/php/pages/succes.php");
 
 }
     else
     {
-    $_SESSION['message']="A aparut o eroare in creearea contului dumneavoastra. Va rugam reincercati.";
+    $_SESSION['message']="There was an error, please try again";
     header("Location: http://localhost/php/pages/error.php");
         
     }

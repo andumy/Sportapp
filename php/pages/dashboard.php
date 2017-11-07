@@ -18,7 +18,6 @@
             <img src="../../assets/logo.svg" alt="logo" class="logo">
         </a>
     </div>
-
     <ul class="nav navbar-nav navbar-right">
         <?php
         echo "<li><a href='http://localhost/php/pages/editProfile.php' class='hello'>Hello ".$_SESSION['user']."</a></li>";

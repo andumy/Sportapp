@@ -20,13 +20,13 @@ if(isset($_GET['email'])&&!empty($_GET['email'])&&isset($_GET['hash'])&&!empty($
         header("Location: http://localhost/php/pages/changePass.php");
     }
     else{
-         $_SESSION['message']= "Cont deja activat sau link eronat";
+         $_SESSION['message']= "Wrong link or already activated account";
          header("Location: http://localhost/php/pages/error.php");
     }
 }
 else
 {
-    $_SESSION['message']= "Link eronat";
+    $_SESSION['message']= "Wrong link";
    header("Location: http://localhost/php/pages/error.php");
 }
 
