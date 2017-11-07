@@ -14,13 +14,13 @@
     
     if($db->query($sql)==TRUE)
     {
-        $_SESSION['message'] = "Competitia a fost stearsa";
+        $_SESSION['message'] = "The competition was removed";
         header("Location: http://localhost/php/pages/succes.php");
         
     }
     else
     {   
-        $_SESSION['message'] = "Competitia nu a fost stearsa. Va rugam reincercati";
+        $_SESSION['message'] = "The competition was removed, please retry";
         header("Location: http://localhost/php/pages/error.php");
     }
 ?>

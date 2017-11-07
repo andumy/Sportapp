@@ -112,10 +112,13 @@ textarea:active, input:active {
     width: 30px;
     height: auto;
     margin-top: 1vw;
+    fill:#BBBBBB;
+}
+.iconlist:hover{
+    fill:#c94b4b;
 }
 .loginButton{
     margin-top: 10%;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4b134f+0,c94b4b+100 */
     background: #333333; /* Old browsers */
     border-radius: 80px;
     -webkit-box-shadow: 0px 0px 27px 9px rgba(0,0,0,0.23);

@@ -3,7 +3,7 @@
     <?php
     require '../scripts/loggedVerify.php';
     require '../scripts/sessionActivation.php';
-   $link = "<form action='updateCompetition.php?hash=".$_GET['hash']."' method='POST'>";
+   $link = "<form action='../scripts/updateCompetition.php?hash=".$_GET['hash']."' method='POST'>";
    echo $link;
    ?>
 
@@ -26,7 +26,7 @@
     </button>
 </a>
 <?php
- $link = "<form action='deleteCompetition.php?hash=".$_GET['hash']."' method='POST'>";
+ $link = "<form action='../scripts/deleteCompetition.php?hash=".$_GET['hash']."' method='POST'>";
  echo $link;
 ?>
     <input type="submit" name="Delete" value="Delete">
