@@ -15,14 +15,15 @@ $result = $db->query("SHOW TABLES LIKE '".$tableCompetitii."'");
 
         if($result->num_rows > 0)
         {
-            $sql = "SELECT * FROM ".$tableCompetitii;
+            $sql = "SELECT * FROM ".$tableCompetitii." LEFT JOIN ".$tableCluburi." ON ".$tableCompetitii.".organizator = ".$tableCluburi.".cluburiId";
+           
             $result = $db->query($sql);
         
             if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-        
-            echo  $row["nume"]. "  " . $row["organizator"]. "  " . $row["data"];
-                if ($row["organizator"]==$_SESSION['user'])
+
+            echo  $row["nume"]. "  " . $row["Nume"]. "  " . $row["data"];
+                if ($row["organizator"]==$_SESSION['id'])
                 {
                     echo "<a href='http://localhost/php/pages/editCompetition.php?hash=".$row['hash']."'>
                             <button>
