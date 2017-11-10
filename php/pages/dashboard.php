@@ -163,7 +163,7 @@
             </a>
         </div>
         <div class="col-sm-6 col-md-3">
-            <a href="regulament.php">
+            <a href="rules.php">
                 <div class="box" id="AthletsBox">
                     <div class="boxIcon">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

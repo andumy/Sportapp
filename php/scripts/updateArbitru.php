@@ -11,10 +11,7 @@ require 'sessionActivation.php';
         $nume = $db->real_escape_string($_POST["nume"]);
         $prenume = $db->real_escape_string($_POST["prenume"]);
         $sex = $db->real_escape_string($_POST["sex"]);
-        $ziNastere = $db->real_escape_string($_POST["ziNastere"]);
-        $gradval = $db->real_escape_string($_POST["gradval"]);
-        $grad = $db->real_escape_string($_POST["grad"]);
-        $greutate = $db->real_escape_string($_POST["greutate"]);
+        $categorie = $db->real_escape_string($_POST["categorie"]);
         $hash = $db->real_escape_string($_GET["hash"]);
     }
 
@@ -22,17 +19,23 @@ require 'sessionActivation.php';
   
         
      
-    $sportiviInsert = "UPDATE  ".$tableSportivi." SET nume='".$nume."' , prenume='".$prenume."' , sex='".$sex."' , ziNastere='".$ziNastere."' , greutate='".$greutate."' , gradval='".$gradval."' , grad='".$grad."' WHERE hash='".$hash."'  ";
+    $arbitruInsert = "UPDATE  ".$tableArbitrii." 
+                      SET nume='".$nume."' , 
+                      prenume='".$prenume."' ,
+                      sex='".$sex."' ,
+                      categorie='".$categorie."'
+                      WHERE hash='".$hash."'  ";
                         
     
 
-    if($db->query($sportiviInsert)==TRUE) {
+    if($db->query($arbitruInsert)==TRUE) {
          $_SESSION['message'] = "Succesful edit";
          header("Location: http://localhost/php/pages/succes.php");
     }
     else 
     {
-        
+        $db->error;
+        exit;
         $_SESSION['message'] = "Unsuccesful edit, please retry";
          header("Location: http://localhost/php/pages/error.php");
     }

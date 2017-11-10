@@ -209,6 +209,10 @@ textarea:active, input:active {
     border-radius: 80px;
 }
 
+.rules{
+    line-height: 2vw;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     height: 12px;

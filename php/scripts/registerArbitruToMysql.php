@@ -5,38 +5,30 @@ require 'sessionActivation.php';
 
 
 
-    
-    $nume = $prenume = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nume = $db->real_escape_string($_POST["nume"]);
         $prenume = $db->real_escape_string($_POST["prenume"]);
         $sex = $db->real_escape_string($_POST["sex"]);
-        $ziNastere = $db->real_escape_string($_POST["ziNastere"]);
-        $gradval = $db->real_escape_string($_POST["gradval"]);
-        $grad = $db->real_escape_string($_POST["grad"]);
-        $greutate = $db->real_escape_string($_POST["greutate"]);
+        $categorie = $db->real_escape_string($_POST["categoria"]);
         $hash = md5(rand(1,1000));
     }
 
   
-    $sportiviCreate = "CREATE TABLE ".$tableSportivi."(
-        sportivID int NOT NULL AUTO_INCREMENT,
+    $arbitriiCreate = "CREATE TABLE ".$tableArbitrii."(
+        arbitruID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
         sex varchar(1) NOT NULL,
         club int NOT NULL , 
-        ziNastere date NOT NULL,
-        greutate int,
-        gradval int,
-        grad varchar(4),
+        categorie varchar(50),
         hash varchar(50) NOT NULL,
-        PRIMARY KEY (sportivID),
+        PRIMARY KEY (arbitruID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
        
   
 
-    $result = $db->query("SHOW TABLES LIKE '".$tableSportivi."'");   
+    $result = $db->query("SHOW TABLES LIKE '".$tableArbitrii."'");   
 
         if($result->num_rows > 0)
         {
@@ -44,7 +36,7 @@ require 'sessionActivation.php';
         }
             else 
             {
-                if($db->query($sportiviCreate)==TRUE){}
+                if($db->query($arbitriiCreate)==TRUE){}
                     else{
                         echo "creation failed <br>". $db->error."<br>";
                     }
@@ -52,11 +44,11 @@ require 'sessionActivation.php';
             }
         
      
-    $sportiviInsert = "INSERT INTO ".$tableSportivi."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad,hash)
-                        VALUES ('".$nume."','".$prenume."','".$sex."','".$_SESSION['id']."','".$ziNastere."','".$greutate."','".$gradval."','".$grad."','".$hash."')";
+    $arbitriiInsert = "INSERT INTO ".$tableArbitrii."(nume,prenume,sex,club,categorie,hash)
+                        VALUES ('".$nume."','".$prenume."','".$sex."','".$_SESSION['id']."','".$categorie."','".$hash."')";
     
 
-    if($db->query($sportiviInsert)==TRUE) {
+    if($db->query($arbitriiInsert)==TRUE) {
          $_SESSION['message'] = "Succesfully register";
          header("Location: http://localhost/php/pages/succes.php");
     }
