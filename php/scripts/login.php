@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-$sql = " SELECT * FROM ".$tableCluburi." WHERE Nume='".$user."' AND parola='".$pass."' AND active='1'";
+$sql = " SELECT * FROM ".$tableCluburi." WHERE BINARY Nume='".$user."' AND parola='".$pass."' AND active='1'";
 
 
 $result = $db->query($sql);

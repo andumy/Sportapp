@@ -6,15 +6,146 @@ require 'sessionActivation.php';
 
 
     
-    $nume = $prenume = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $spnume = str_replace(' ', '',preg_replace("/[^A-Za-z0-9 ]/", '',$db->real_escape_string($_POST["nume"])));
+        
         $nume = $db->real_escape_string($_POST["nume"]);
         $data = $db->real_escape_string($_POST["data"]);
         $organizator = $_SESSION['id'];
         $hash = md5(rand(0,1000));
     }
-
     
+   
+    
+
+    $kataCreate = "CREATE TABLE ".$spnume."KataU18F(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kataCreate);
+
+    $kataCreate = "CREATE TABLE ".$spnume."KataP18F(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kataCreate);
+
+    $kataCreate = "CREATE TABLE ".$spnume."KataU18M(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kataCreate);
+
+    $kataCreate = "CREATE TABLE ".$spnume."KataP18M(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kataCreate);
+
+    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteU18F(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kumiteCreate);
+    
+    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteP18F(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kumiteCreate);
+
+    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteU18M(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kumiteCreate);
+    
+    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteP18M(
+        sportivID int NOT NULL AUTO_INCREMENT,
+        nume varchar(50) NOT NULL,
+        prenume varchar(50) NOT NULL,
+        sex varchar(1) NOT NULL,
+        club int NOT NULL , 
+        ziNastere date NOT NULL,
+        greutate int,
+        gradval int,
+        grad varchar(4),
+        hash varchar(50) NOT NULL,
+        PRIMARY KEY (sportivID),
+        FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
+        )";
+    $db->query($kumiteCreate);
+
     $competitiiCreate = "CREATE TABLE ".$tableCompetitii."(
         competitieID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
@@ -24,8 +155,6 @@ require 'sessionActivation.php';
         PRIMARY KEY (competitieID),
         FOREIGN KEY (organizator) REFERENCES ".$tableCluburi." (cluburiId)
         )";
-       
-  
 
     $result = $db->query("SHOW TABLES LIKE '".$tableCompetitii."'");   
 
@@ -45,7 +174,7 @@ require 'sessionActivation.php';
                 
             }
         
-     
+
     $competitiiInsert = "INSERT INTO ".$tableCompetitii."(nume,organizator,data,hash)
                         VALUES ('".$nume."','".$_SESSION['id']."','".$data."','".$hash."')";
     

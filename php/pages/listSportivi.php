@@ -45,7 +45,7 @@
 
                             if($result->num_rows > 0)
                             {
-                                $sql = "SELECT * FROM ".$tableCluburi." LEFT JOIN ".$tableSportivi." ON ".$tableSportivi.".club = ".$tableCluburi.".cluburiId WHERE ".$tableCluburi.".Nume='".$_SESSION['user']."'";
+                                $sql = "SELECT * FROM ".$tableCluburi." RIGHT JOIN ".$tableSportivi." ON ".$tableSportivi.".club = ".$tableCluburi.".cluburiId WHERE ".$tableCluburi.".Nume='".$_SESSION['user']."'";
                                 $result = $db->query($sql);
                             
                                 if ($result->num_rows > 0) 
