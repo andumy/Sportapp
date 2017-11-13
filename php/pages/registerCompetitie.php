@@ -39,35 +39,30 @@
         <form action="../scripts/registerCompetitieToMysql.php" method="POST">
         </br>
             <div class = "row">    
-                <div class = "col-sm-4">
+                <div class = "col-sm-2">
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="nume" placeholder="Name">
+                    <label for="nume" class="label">Name</label>
+                    <input type="text" name="nume">
                 </div>
 
                 <div class = "col-sm-4">
-                </div>    
+                    <label for="data" class="label">Date</label>
+                    <input type="date" name="data">
+                </div> 
+
+                <div class = "col-sm-2">
+                </div> 
             </div>
 
-            <div class = "row">    
-                <div class = "col-sm-4">
-                </div>
-
-                <div class = "col-sm-4">
-                    <input type="date" name="data" placeholder="Date">
-                </div>
-
-                <div class = "col-sm-4">
-                </div>    
-            </div>
             
             <div class="row">
                 <div class="col-sm-1" > 
                 </div>
         
                 <div class="col-sm-2" >
-                    <a href = "http://localhost/php/pages/listArbitrii.php">
+                    <a href = "http://localhost/php/pages/listCompetitii.php">
                         <div class="loginButton  divButon topSpace">
                             Back
                         </div>

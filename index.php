@@ -28,11 +28,13 @@
                 </div>
 
                 <div class = "col-sm-4">
-                <input type="text" name="user" placeholder="Username" class="inpts">
+                <label for="user" class="label">Username</label>
+                <input type="text" name="user" class="inpts">
                 </div>
 
                 <div class = "col-sm-4 ">
-                <input type="password" name="pass" placeholder="Password" class="inpts">
+                <label for="pass" class="label">Password</label>
+                <input type="password" name="pass"  class="inpts">
                 </div>
 
                 <div class = "col-sm-2">

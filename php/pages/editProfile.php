@@ -18,20 +18,22 @@
             <div class = "row">    
 
                 <div class = "col-sm-4">
-                <?php
-                    echo "<input type='text' name='user' placeholder='".$_SESSION['user']."' value='".$_SESSION['user']."'>"
-                ?>
-                
+                    <label for="user" class="label">Username</label>
+                    <?php
+                        echo "<input type='text' name='user' placeholder='".$_SESSION['user']."' value='".$_SESSION['user']."'>"
+                    ?>
                 </div>
 
                 <div class = "col-sm-4 ">
-                <input type="password" name="pass" placeholder="Password" class="inpts">
+                    <label for="pass" class="label">Password</label>
+                    <input type="password" name="pass" placeholder="Click to change" class="inpts">
                 </div>
 
                 <div class = "col-sm-4">
-                <?php
-                    echo "<input type='mail' name='email' placeholder='".$_SESSION['mail']."' value='".$_SESSION['mail']."'>"
-                ?>
+                    <label for="email" class="label">Email</label>
+                    <?php
+                        echo "<input type='mail' name='email' placeholder='".$_SESSION['mail']."' value='".$_SESSION['mail']."'>"
+                    ?>
                 </div>
                     
             </div>

@@ -20,7 +20,8 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="password" name="pass" placeholder="New Password" class="inpts">
+                    <label for="pass" class="user">New Password</label>
+                    <input type="password" name="pass" class="inpts">
                 </div>
 
                 <div class = "col-sm-4 ">
@@ -42,6 +43,7 @@
                 </div>
 
                 <div class = "col-sm-4">
+                    
                     <input type="submit" value="Change Password" name="register" class="loginButton">
                 </div>
 

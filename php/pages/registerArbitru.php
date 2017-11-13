@@ -43,11 +43,13 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="nume" placeholder="First Name">
+                    <label for="nume" class="label">First Name</label>
+                    <input type="text" name="nume">
                 </div>
 
                 <div class = "col-sm-4 ">
-                    <input type="text" name="prenume" placeholder="Second Name">
+                    <label for="prenume" class="label">Second Name</label>
+                    <input type="text" name="prenume">
                 </div>
 
                 <div class = "col-sm-2">
@@ -59,7 +61,8 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="categoria" placeholder="Class">
+                    <label for="categoria" class="label">Class</label>
+                    <input type="text" name="categoria">
                 </div>   
                 
                 <div class = "col-sm-4">

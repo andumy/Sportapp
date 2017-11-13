@@ -29,6 +29,7 @@
                     $nume = $row['nume'];
                     $prenume = $row['prenume'];
                     $categorie = $row['categorie'];
+                    $sex = $row['sex'];
                 }
             }
         }
@@ -71,6 +72,7 @@
                 </div>
 
                 <div class = "col-sm-4">
+                     <label for="nume" class="label">First Name</label>
                     <?php
                         echo "<input type='text' name='nume' placeholder=".$nume." value='".$nume."'>";
                     ?>
@@ -78,6 +80,7 @@
                 </div>
 
                 <div class = "col-sm-4 ">
+                    <label for="prenume" class="label">Second Name</label>
                     <?php
                         echo "<input type='text' name='prenume' placeholder=".$prenume." value='".$prenume."'>";
                     ?>
@@ -92,6 +95,7 @@
                 </div>
 
                 <div class = "col-sm-4">
+                     <label for="categoria" class="label">Class</label>
                     <?php
                         echo "<input type='text' name='categorie' placeholder=".$categorie." value=".$categorie.">";
                     ?>
@@ -134,7 +138,7 @@
                 </div>
         
                 <div class="col-sm-2" >
-                    <a href = "http://localhost/php/pages/listAritrii.php">
+                    <a href = "http://localhost/php/pages/listArbitrii.php">
                         <div class="loginButton  divButon topSpace">
                             Back
                         </div>
@@ -160,6 +164,17 @@
 var male = document.getElementById('maleSex');
 var female = document.getElementById('femaleSex');
 
+var sex =  "<?php echo $sex; ?>";
+
+
+if(sex == 'F') {
+    document.getElementById('radioF').checked = true;
+    female.classList.add('sexBoxActive');
+}       
+else{ 
+    document.getElementById('radioM').checked = true;
+    male.classList.add('sexBoxActive');
+}
 male.addEventListener('click',function (){
     document.getElementById('radioM').checked = true;
 

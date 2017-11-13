@@ -31,6 +31,8 @@
                     $ziNastere = $row['ziNastere'];
                     $greutate = $row['greutate'];
                     $gradval = $row['gradval'];
+                    $sex = $row['sex'];
+                    $grad = $row['grad'];
                 }
             }
         }
@@ -73,6 +75,7 @@
                 </div>
 
                 <div class = "col-sm-4">
+                    <label for="nume" class="label">First Name</label>
                     <?php
                         echo "<input type='text' name='nume' placeholder=".$nume." value='".$nume."'>";
                     ?>
@@ -80,6 +83,7 @@
                 </div>
 
                 <div class = "col-sm-4 ">
+                    <label for="prenume" class="label">Last Name</label>
                     <?php
                         echo "<input type='text' name='prenume' placeholder=".$prenume." value='".$prenume."'>";
                     ?>
@@ -94,6 +98,7 @@
                 </div>
 
                 <div class = "col-sm-4">
+                    <label for="gradval" class="label">Grade</label>
                     <?php
                         echo "<input type='text' name='gradval' placeholder=".$gradval." value=".$gradval.">";
                     ?>
@@ -123,12 +128,14 @@
                 </div>
 
                 <div class = "col-sm-4">
+                    <label for="greutate" class="label">Weight</label>
                     <?php
                         echo "<input type='text' name='greutate' placeholder=".$greutate." value=".$greutate.">";
                     ?>
                 </div>
 
                 <div class = "col-sm-4 ">
+                    <label for="ziNastere" class="label">Birth Date</label>
                     <?php
                         echo "<input type='date' name='ziNastere' placeholder=".$ziNastere." value=".$ziNastere.">";
                     ?>
@@ -199,6 +206,27 @@ var kyu = document.getElementById('gradKyu');
 var dan = document.getElementById('gradDan');
 var male = document.getElementById('maleSex');
 var female = document.getElementById('femaleSex');
+
+var sex =  "<?php echo $sex; ?>";
+var grad =  "<?php echo $grad; ?>";
+
+
+if(sex == 'F') {
+    document.getElementById('radioF').checked = true;
+    female.classList.add('sexBoxActive');
+}       
+else{ 
+    document.getElementById('radioM').checked = true;
+    male.classList.add('sexBoxActive');
+}
+if(grad == 'kyu') {
+    document.getElementById('radioKyu').checked = true;
+    kyu.classList.add('gradTypeActive');
+}    
+else {
+    document.getElementById('radioDan').checked = true;
+    dan.classList.add('gradTypeActive');
+}
 
 kyu.addEventListener('click',function (){
     document.getElementById('radioKyu').checked = true;

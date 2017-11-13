@@ -43,11 +43,13 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="nume" placeholder="First Name">
+                    <label for="nume" class="label">First Name</label>
+                    <input type="text" name="nume">
                 </div>
 
                 <div class = "col-sm-4 ">
-                    <input type="text" name="prenume" placeholder="Second Name">
+                <label for="prenume" class="label">Second Name</label>
+                    <input type="text" name="prenume" >
                 </div>
 
                 <div class = "col-sm-2">
@@ -59,7 +61,8 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="gradval" placeholder="Grade">
+                <label for="gradval" class="label">Grade</label>
+                    <input type="text" name="gradval">
                 </div>   
                 
                 <div class = "col-sm-1">
@@ -86,11 +89,13 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="greutate" placeholder="Weight" >
+                    <label for="greutate" class="label">Weight</label>
+                    <input type="text" name="greutate">
                 </div>
 
                 <div class = "col-sm-4 ">
-                    <input type="date" name="ziNastere" placeholder="Birth Date" >
+                    <label for="ziNastere" class="label">Birth Date</label>
+                    <input type="date" name="ziNastere" >
                 </div>
 
                 <div class = "col-sm-2">

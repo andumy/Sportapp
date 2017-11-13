@@ -70,6 +70,7 @@
                 </div>
 
                 <div class = "col-sm-4">
+                    <label for="nume" class="label">Name</label>
                     <?php
                         echo "<input type='text' name='nume' placeholder=".$nume." value='".$nume."'>";
                     ?>
@@ -77,6 +78,7 @@
                 </div>
 
                 <div class = "col-sm-4 ">
+                    <label for="data" class="label">Date</label>
                     <?php
                         echo "<input type='date' name='data' placeholder=".$data." value='".$data."'>";
                     ?>
@@ -92,7 +94,7 @@
                 </div>
         
                 <div class="col-sm-2" >
-                    <a href = "http://localhost/php/pages/listAritrii.php">
+                    <a href = "http://localhost/php/pages/listCompetitii.php">
                         <div class="loginButton  divButon topSpace">
                             Back
                         </div>

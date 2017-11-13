@@ -10,10 +10,17 @@ body{
 }
 .logo{
     padding-top:16vw;
-    padding-bottom: 15vw;
+    padding-bottom: 10vw;
     width:100%;
     height: auto;
     color: #C94B4B;
+}
+.label{
+    font-family: "Open Sans Light";
+    font-size: 1vw !important;
+    color: #555555 !important;
+    margin-left: 0px !important;
+    padding-left: 0px !important;
 }
 input{
     margin: 5px 5px;

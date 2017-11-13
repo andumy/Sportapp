@@ -20,7 +20,7 @@ if($results->num_rows > 0)
 
     mail($mail,"Recovery mail from Sportapp",$msg);
     
-    $_SESSION['message'] = "A recovery link was sent to ".$mail.;
+    $_SESSION['message'] = "A recovery link was sent to ".$mail;
     header('location: http://localhost/php/pages/succes.php');
     exit;
 }

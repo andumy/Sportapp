@@ -20,7 +20,8 @@
                 </div>
 
                 <div class = "col-sm-4">
-                    <input type="text" name="data" placeholder="Username or Mail" class="inpts">
+                    <label for="data" class="label">Username or Mail</label>
+                    <input type="text" name="data" class="inpts">
                 </div>
 
                 <div class = "col-sm-4 ">
