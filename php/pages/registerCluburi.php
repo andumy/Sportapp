@@ -50,7 +50,7 @@
                 <div class = "col-sm-4">
                      <input type="submit"  value="Register" name="register" class="loginButton">
                      </br>
-                     <div class="register"> <a href="http://localhost">Back</a> </div>
+                     <div class="register"> <a href="../../index.php">Back</a> </div>
                 </div>
 
                 <div class = "col-sm-4">

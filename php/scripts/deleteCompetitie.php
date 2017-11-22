@@ -19,21 +19,21 @@
     } 
     $spnume = str_replace(' ', '',preg_replace("/[^A-Za-z0-9 ]/", '',$nume));
     
-    $sql = "DROP TABLE ".$spnume."katap18f";
+    $sql = "DROP TABLE cattable".$spnume."katap18f";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."katau18f";
+    $sql = "DROP TABLE cattable".$spnume."katau18f";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."katap18m";
+    $sql = "DROP TABLE cattable".$spnume."katap18m";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."katau18m";
+    $sql = "DROP TABLE cattable".$spnume."katau18m";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."kumitep18f";
+    $sql = "DROP TABLE cattable".$spnume."kumitep18f";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."kumiteu18f";
+    $sql = "DROP TABLE cattable".$spnume."kumiteu18f";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."kumitep18m";
+    $sql = "DROP TABLE cattable".$spnume."kumitep18m";
     $db->query($sql);
-    $sql = "DROP TABLE ".$spnume."kumiteu18m";
+    $sql = "DROP TABLE cattable".$spnume."kumiteu18m";
     $db->query($sql);
 
     $sql = "DELETE FROM ".$tableCompetitii."  WHERE hash='".$hash."'";

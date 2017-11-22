@@ -18,7 +18,7 @@ require 'sessionActivation.php';
    
     
 
-    $kataCreate = "CREATE TABLE ".$spnume."KataU18F(
+    $kataCreate = "CREATE TABLE cattable".$spnume."KataU18F(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -28,13 +28,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kataCreate);
 
-    $kataCreate = "CREATE TABLE ".$spnume."KataP18F(
+    $kataCreate = "CREATE TABLE cattable".$spnume."KataP18F(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -44,13 +45,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kataCreate);
 
-    $kataCreate = "CREATE TABLE ".$spnume."KataU18M(
+    $kataCreate = "CREATE TABLE cattable".$spnume."KataU18M(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -60,13 +62,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kataCreate);
 
-    $kataCreate = "CREATE TABLE ".$spnume."KataP18M(
+    $kataCreate = "CREATE TABLE cattable".$spnume."KataP18M(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -76,13 +79,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kataCreate);
 
-    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteU18F(
+    $kumiteCreate = "CREATE TABLE cattable".$spnume."KumiteU18F(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -92,13 +96,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kumiteCreate);
     
-    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteP18F(
+    $kumiteCreate = "CREATE TABLE cattable".$spnume."KumiteP18F(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -108,13 +113,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kumiteCreate);
 
-    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteU18M(
+    $kumiteCreate = "CREATE TABLE cattable".$spnume."KumiteU18M(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -124,13 +130,14 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
         )";
     $db->query($kumiteCreate);
     
-    $kumiteCreate = "CREATE TABLE ".$spnume."KumiteP18M(
+    $kumiteCreate = "CREATE TABLE cattable".$spnume."KumiteP18M(
         sportivID int NOT NULL AUTO_INCREMENT,
         nume varchar(50) NOT NULL,
         prenume varchar(50) NOT NULL,
@@ -140,6 +147,7 @@ require 'sessionActivation.php';
         greutate int,
         gradval int,
         grad varchar(4),
+        loc int(3),
         hash varchar(50) NOT NULL,
         PRIMARY KEY (sportivID),
         FOREIGN KEY (club) REFERENCES ".$tableCluburi." (cluburiId)
