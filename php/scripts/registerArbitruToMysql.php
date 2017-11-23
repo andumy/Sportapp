@@ -2,7 +2,7 @@
 
 require 'dbconnection.php';
 require 'sessionActivation.php';
-
+require 'loggedVerify.php';
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -54,7 +54,7 @@ require 'sessionActivation.php';
     }
     else 
     {
-        echo $db->error;
+        
         exit;
         $_SESSION['message'] = "Unsuccesfully register, please retry";
          header("Location: http://localhost/php/pages/error.php");

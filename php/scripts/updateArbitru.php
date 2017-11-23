@@ -2,7 +2,7 @@
 
 require 'dbconnection.php';
 require 'sessionActivation.php';
-
+require 'loggedVerify.php';
 
 
     

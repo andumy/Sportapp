@@ -1,6 +1,7 @@
 <html>
 <head>
     <?php
+    require '../scripts/loggedVerify.php';
     require '../scripts/sessionActivation.php';
     ?>
     <link rel = "stylesheet" type="text/css" href="../../css/mainPanel.css"></link>

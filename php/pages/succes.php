@@ -5,8 +5,6 @@
     <?php
     require '../scripts/dbconnection.php';
     require '../scripts/sessionActivation.php';
-
-    
     ?>
 </head>
 

@@ -12,7 +12,9 @@
     <link rel = "stylesheet" type="text/css" href="../../css/dashboard.css"></link>
 
     <?php
-        $hash = $db->real_escape_string($_GET["hash"]);
+        $hashComp = $db->real_escape_string($_GET["hash"]);
+        $dir = $db->real_escape_string($_GET["dir"]);
+        $url = ($dir == "kata")? ("../scripts/registerSportiviToKata.php"):("../scripts/registerSportiviToKumite.php");
         $index = 0;
     ?>
 
@@ -116,7 +118,7 @@
         </div>
 
         <div class="col-sm-2" >
-            <a href = "http://localhost/php/pages/dashboard.php">
+            <a href = "http://localhost/php/pages/listCompetitii.php">
                 <div class="loginButton  divButon">
                       Back
                 </div>
@@ -127,8 +129,9 @@
         </div>
 
         <div class="col-sm-2" >
-                <form action="../scripts/registerSportivtoCompetitieToMySql.php" id="registerAthletesFormId" method="post">
-                    <input type="text" name="hash" id="hashId" value="2" class="inpts">
+                <form action=<?php echo "'".$url."'"?> id="registerAthletesFormId" method="post">
+                    <input type="text" name="hash" id="hashId"  class="inpts">
+                    <input type="text" name="compHash" value=<?php echo "'".$hashComp."'"?> class="inpts">
                 </form>
                 <div class="loginButton  divButon" onclick="fetchHash()">
                       Register Athletes
@@ -168,8 +171,7 @@
     }
     function fetchHash(){
        
-        document.getElementById("hashId").value = stringArray;//.toString(); 
-        //console.log( document.getElementById("hashId").value);
+        document.getElementById("hashId").value = stringArray;
         document.getElementById("registerAthletesFormId").submit();
     }
 </script>

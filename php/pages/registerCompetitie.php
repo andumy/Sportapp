@@ -1,8 +1,9 @@
 <html>
 <head>
     <?php
-    require '../scripts/loggedVerify.php';
-    require '../scripts/sessionActivation.php';
+     require '../scripts/loggedVerify.php';
+     require '../scripts/dbconnection.php';
+     require '../scripts/sessionActivation.php';
     ?>
 
 

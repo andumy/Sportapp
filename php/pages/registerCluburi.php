@@ -1,7 +1,9 @@
 <html>
 <head>
     <?php
-    require '../scripts/sessionActivation.php';
+     require '../scripts/loggedVerify.php';
+     require '../scripts/dbconnection.php';
+     require '../scripts/sessionActivation.php';
     ?>
     <link rel = "stylesheet" type="text/css" href="../../css/mainPanel.css"></link>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
