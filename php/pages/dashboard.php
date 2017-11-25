@@ -26,7 +26,7 @@
     </ul>
   </div>
 </nav>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
            <div class="box">
@@ -49,7 +49,7 @@
            </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-3">

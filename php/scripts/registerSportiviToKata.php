@@ -21,14 +21,14 @@ function get_string_between($string, $start, $end){
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashstr = $db->real_escape_string($_POST["hash"]);
         $compHash = $db->real_escape_string($_POST["compHash"]);
-       
     }
     $sql = "SELECT * FROM ".$tableCompetitii." WHERE hash='".$compHash."'";
     $results = $db->query($sql);
     while($numeComp = $results->fetch_assoc()){
         if($numeComp['nume'] != NULL) break;
     }
-    
+    $numeComp['nume'] = str_replace(' ', '',preg_replace("/[^A-Za-z0-9 ]/", '',$numeComp['nume']));
+
     $flag = 0;
     $hashArray = get_string_between($hashstr, '[hash]', '[/hash]');
     foreach($hashArray as $hash)
@@ -51,14 +51,17 @@ function get_string_between($string, $start, $end){
 
                     
                 $tableString = ($age<18)? ("cattable".$numeComp['nume']."katau18".$row['sex']):("cattable".$numeComp['nume']."katap18".$row['sex']);
-                echo $tableString."</br>";
                 
-                $sql = "INSERT INTO ".$tableString."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad,hash)
-                VALUES ('".$row['nume']."','".$row['prenume']."','".$row['sex']."','".$row['club']."','".$row['ziNastere']."','".$row['greutate']."','".$row['gradval']."','".$row['grad']."','".$row['hash']."')";
-                
-                if($db->query($sql)){}
-                else{
-                    $flag = 1;
+                $sql = "SELECT hash, COUNT(".$row['hash'].") FROM ".$tableSportivi." GROUP BY hash";
+                $occurance = $db->query($sql);
+                if($occurance == NULL)
+                {
+                    $sql = "INSERT INTO ".$tableString."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad,hash)
+                    VALUES ('".$row['nume']."','".$row['prenume']."','".$row['sex']."','".$row['club']."','".$row['ziNastere']."','".$row['greutate']."','".$row['gradval']."','".$row['grad']."','".$row['hash']."')";
+                    if($db->query($sql)){}
+                        else{
+                            $flag = 1;
+                        }
                 }
             }
     }

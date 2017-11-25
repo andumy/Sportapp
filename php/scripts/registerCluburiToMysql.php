@@ -3,7 +3,6 @@
 
 require 'dbconnection.php';
 require 'sessionActivation.php';
-require 'loggedVerify.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

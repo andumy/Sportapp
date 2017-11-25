@@ -45,12 +45,12 @@
 
                 <div class = "col-sm-4">
                     <label for="nume" class="label">First Name</label>
-                    <input type="text" name="nume">
+                    <input type="text" name="nume" spellcheck="false">
                 </div>
 
                 <div class = "col-sm-4 ">
                 <label for="prenume" class="label">Second Name</label>
-                    <input type="text" name="prenume" >
+                    <input type="text" name="prenume" spellcheck="false">
                 </div>
 
                 <div class = "col-sm-2">
@@ -63,7 +63,7 @@
 
                 <div class = "col-sm-4">
                 <label for="gradval" class="label">Grade</label>
-                    <input type="text" name="gradval">
+                    <input type="text" name="gradval" spellcheck="false">
                 </div>   
                 
                 <div class = "col-sm-1">
@@ -91,7 +91,7 @@
 
                 <div class = "col-sm-4">
                     <label for="greutate" class="label">Weight</label>
-                    <input type="text" name="greutate">
+                    <input type="text" name="greutate" spellcheck="false">
                 </div>
 
                 <div class = "col-sm-4 ">

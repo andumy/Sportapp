@@ -21,7 +21,7 @@
 
                 <div class = "col-sm-4">
                     <label for="pass" class="user">New Password</label>
-                    <input type="password" name="pass" class="inpts">
+                    <input type="password" name="pass" class="inpts" spellcheck="false">
                 </div>
 
                 <div class = "col-sm-4 ">
