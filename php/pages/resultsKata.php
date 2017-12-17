@@ -105,7 +105,7 @@
         <div class="col-sm-2" >
             <a href = "registerSportiv.php">
                 <div class="loginButton  divButon">
-                    Register Athlete
+                    Save Changes
                 </div>
             </a>
         </div>

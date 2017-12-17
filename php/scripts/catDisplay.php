@@ -48,13 +48,10 @@
                     <div class='col-sm-1'>
                         
                     </div>
-                    <div class='col-sm-1'>
-                    ".$row['gradval']." ".$row['grad']."
-                    </div>
-                    <div class='col-sm-1'>
-                    
-                    </div>
                     <div class='col-sm-2'>
+                    Degree - ".$row['gradval']." ".$row['grad']."
+                    </div>
+                    <div class='col-sm-1'>
                     
                     </div>";
 
@@ -79,9 +76,9 @@
                             while($locVal = $loc->fetch_assoc())
                             {
                                 echo "
-                                <div class='col-sm-1'>
+                                <div class='col-sm-2'>
                                     <form action=''>
-                                        <input type='text' name='loc' spellcheck='false' value='".$locVal['loc']."' class='inputLoc'>
+                                    Place - <input type='text' name='loc' spellcheck='false' value='".$locVal['loc']."' class='inputLoc'>
                                     </form>
                                 </div>
                                 ";
