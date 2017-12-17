@@ -93,8 +93,25 @@ textarea:active, input:active {
     font-weight: 300;
     font-size: 16px;
     line-height: 5vw;
-    padding: 5vw 5vw;
+    padding: 0px 5vw 5vw;
     
+}
+.titleSection{
+    height: 5vw;
+    width: 100%;
+    color:#B9B9B9;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+.catTitle{
+    padding: 0px 30px;
+    display: inline-block;
+}
+.catName{
+    font-size: 16px;
+    color: #777777;
+    display: inline-block;
 }
 .clubStyle{
     font-size: 12px;
@@ -105,7 +122,7 @@ textarea:active, input:active {
 }
 .displayBox{
     width:100%;
-    height:100%;
+    height:85%;
     overflow:auto;
 }
 .iconList{
@@ -143,6 +160,10 @@ textarea:active, input:active {
 }
 .inpts{
     display: none;
+}
+.inputLoc{
+    width: 50%;
+    text-align: center;
 }
 .gradType{
     margin-top: 25px ;

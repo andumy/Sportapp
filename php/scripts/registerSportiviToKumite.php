@@ -52,9 +52,9 @@ function get_string_between($string, $start, $end){
                     
                 $tableString = ($age<18)? ("cattable".$numeComp['nume']."kumiteu18".$row['sex']):("cattable".$numeComp['nume']."kumitep18".$row['sex']);
                 
-                $sql = "SELECT hash, COUNT(".$row['hash'].") FROM ".$tableSportivi." GROUP BY hash";
+                $sql = "SELECT * FROM ".$tableString." WHERE hash='".$row['hash']."'";
                 $occurance = $db->query($sql);
-                if($occurance->num_rows = 0)
+                if($occurance->num_rows == 0)
                 {
                     $sql = "INSERT INTO ".$tableString."(nume,prenume,sex,club,ziNastere,greutate,gradval,grad,hash)
                     VALUES ('".$row['nume']."','".$row['prenume']."','".$row['sex']."','".$row['club']."','".$row['ziNastere']."','".$row['greutate']."','".$row['gradval']."','".$row['grad']."','".$row['hash']."')";

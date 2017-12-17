@@ -35,6 +35,11 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="scrollBox">
+            <div class="titleSection">
+                <?php
+                     echo "Rules";
+                ?>
+            </div>
                 <div class="displayBox rules">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac porta ex, in commodo augue. 
                 Maecenas feugiat gravida purus at egestas. Curabitur vitae interdum erat. 

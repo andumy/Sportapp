@@ -45,6 +45,17 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="scrollBox">
+                <div class="titleSection">
+                    <?php
+                        $sql = "SELECT * FROM ".$tableCompetitii." WHERE hash='".$hashComp."'";
+                        $results = $db->query($sql);
+
+                        while($row = $results->fetch_assoc())
+                        {
+                            echo $row['nume']." - ".$dir;
+                        }
+                    ?>
+                </div>
                 <div class="displayBox">
                     <div class="container-fluid">
                         <?php

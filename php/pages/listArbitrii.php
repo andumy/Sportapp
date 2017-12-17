@@ -37,6 +37,11 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="scrollBox">
+            <div class="titleSection">
+                <?php
+                     echo "Referees - ".$_SESSION['user'];
+                ?>
+            </div>
                 <div class="displayBox">
                     <div class="container-fluid">
                         <?php

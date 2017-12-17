@@ -20,11 +20,11 @@ $result = $db->query($sql);
 if($result->num_rows > 0){
     while($row=$result->fetch_assoc())
     {
-    $_SESSION['user']=$user;
-    $_SESSION['mail']=$row['mail'];
-    $_SESSION['logged']=1;
-    $_SESSION['hash'] = $row['hash'];
-    $_SESSION['id'] = $row['cluburiId'];
+        $_SESSION['user']=$user;
+        $_SESSION['mail']=$row['mail'];
+        $_SESSION['logged']=1;
+        $_SESSION['hash'] = $row['hash'];
+        $_SESSION['id'] = $row['cluburiId'];
     }
     header("Location: http://localhost/php/pages/dashboard.php");
 }
