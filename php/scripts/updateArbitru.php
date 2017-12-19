@@ -34,8 +34,6 @@ require 'loggedVerify.php';
     }
     else 
     {
-        $db->error;
-        exit;
         $_SESSION['message'] = "Unsuccesful edit, please retry";
          header("Location: http://localhost/php/pages/error.php");
     }

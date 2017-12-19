@@ -1,28 +1,27 @@
 var currentCat = 0;
-var cat = ['- Kata Under 18 Male','- Kata Over 18 Male','- Kata Under 18 Female','- Kata Over 18 Female'];
+
+var catName;
 var globalHash;
-var globalDir;
 
 function leftCat(){
     if(currentCat == 0)
-        currentCat = cat.length-1;
+        currentCat = catName.length-1;
     else
         currentCat--;
-    displayCat(globalHash,globalDir);
+    displayCat(globalHash,catName);
 }
 
 function rightCat(){
-    if(currentCat == cat.length-1)
+    if(currentCat == catName.length-1)
         currentCat = 0;
     else
         currentCat++;
-    displayCat(globalHash,globalDir);
+    displayCat(globalHash,catName);
 }
 
-function displayCat(hash,dir) {
-    globalDir = dir;
+function displayCat(hash,catNamePassed) {
     globalHash = hash;
-
+    catName = catNamePassed;
     if (window.XMLHttpRequest){
          xmlhttp = new XMLHttpRequest();
      }    else{
@@ -33,7 +32,7 @@ function displayCat(hash,dir) {
      
          if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
             document.getElementById('catDisplayBox').innerHTML = xmlhttp.responseText;
-            document.getElementById('cat').innerHTML = cat[currentCat];
+            document.getElementById('cat').innerHTML = catName[currentCat];
          }
      }
      var urlCustom = "http://localhost/php/scripts/catDisplay.php";
@@ -41,6 +40,6 @@ function displayCat(hash,dir) {
      xmlhttp.open('POST',urlCustom,true);
      xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-     var data = "index="+currentCat+"&hash="+hash+"&dir="+dir;
+     var data = "index="+currentCat+"&hash="+hash;
      xmlhttp.send(data);
   }

@@ -171,13 +171,11 @@
         {
           document.getElementById("enter"+index).classList.add("checkActive");
           stringArray[index] = "[hash]" + hash + "[/hash]";
-          console.log(stringArray);
         }
         else
         {
           document.getElementById("enter"+index).classList.remove("checkActive");
           stringArray[index] = "";
-          console.log(stringArray);
         }
     }
     function fetchHash(){

@@ -1,24 +1,20 @@
 <html>
 <head>
 <?php
-    // require '../scripts/loggedVerify.php';
+    require '../scripts/loggedVerify.php';
     require '../scripts/dbconnection.php';
     require '../scripts/sessionActivation.php';
-
+    require '../scripts/cat.php';
 ?>
 </head>
 <body>
 <?php
-    $cat = ['u18m', 'p18m', 'u18f', 'p18f'];
-
+    $idIndex=0;
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $hash = $db->escape_string($_POST['hash']);
         $index = $db->escape_string($_POST['index']);
-        $dir = $db->escape_string($_POST['dir']);
-
     }
-
     $sql = "SELECT * FROM ".$tableCompetitii." WHERE hash='".$hash."'";
 
     $results = $db->query($sql);
@@ -30,9 +26,8 @@
 
     $name = str_replace(' ', '',preg_replace("/[^A-Za-z0-9 ]/", '',$db->real_escape_string($name)));
 
-
-    $tableCat = "cattable".$name.$dir.$cat[$index];
-    
+    $tableCat = "cattable".$name.$cat[$index];
+    echo "<input type='text' name='cat' value='".$tableCat."' style='display:none;'></input>";
     $sql = "SELECT * FROM ".$tableCluburi." RIGHT JOIN ".$tableCat." ON ".$tableCat.".club = ".$tableCluburi.".cluburiId WHERE ".$tableCluburi.".Nume='".$_SESSION['user']."'";
     $result = $db->query($sql);
     
@@ -62,8 +57,6 @@
                                                 WHERE hash='".$hash."')
                                         )
                         ";
-                    
-                    // wrong query
 
                     $occurence = $db->query($sql);
                     while($rowOccurence = $occurence->fetch_assoc())
@@ -78,10 +71,11 @@
                                 echo "
                                 <div class='col-sm-2'>
                                     <form action=''>
-                                    Place - <input type='text' name='loc' spellcheck='false' value='".$locVal['loc']."' class='inputLoc'>
+                                    Place - <input type='text' name='".$row['hash']."' id='loc".$idIndex."' spellcheck='false' value='".$locVal['loc']."' class='inputLoc'>
                                     </form>
                                 </div>
                                 ";
+                                $idIndex=$idIndex+1;
                             }
                         }
                         else
