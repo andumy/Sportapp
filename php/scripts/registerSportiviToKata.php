@@ -3,7 +3,7 @@
 require 'dbconnection.php';
 require 'sessionActivation.php';
 require 'loggedVerify.php';
-
+require 'cat.php';
 
 function get_string_between($string, $start, $end){
     $split_string       = explode($end,$string);
@@ -47,10 +47,8 @@ function get_string_between($string, $start, $end){
                     {
                         if($birthDate[2] > date("d")) $age = date("Y") - $birthDate[0] - 1;
                         if($birthDate[2] <= date("d")) $age = date("Y") - $birthDate[0];
-                    }
-
-                    
-                $tableString = ($age<18)? ("cattable".$numeComp['nume']."katau18".$row['sex']):("cattable".$numeComp['nume']."katap18".$row['sex']);
+                    }   
+                $tableString = ($age<18)? ("cattable".$numeComp['nume']."katau18".$row['sex']):("cattable".$numeComp['nume']."katao18".$row['sex']);
                 
                 $sql = "SELECT * FROM ".$tableString." WHERE hash='".$row['hash']."'";
                 $occurance = $db->query($sql);

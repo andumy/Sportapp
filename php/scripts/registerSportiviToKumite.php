@@ -50,7 +50,7 @@ function get_string_between($string, $start, $end){
                     }
 
                     
-                $tableString = ($age<18)? ("cattable".$numeComp['nume']."kumiteu18".$row['sex']):("cattable".$numeComp['nume']."kumitep18".$row['sex']);
+                $tableString = ($age<18)? ("cattable".$numeComp['nume']."kumiteu18".$row['sex']):("cattable".$numeComp['nume']."kumiteo18".$row['sex']);
                 
                 $sql = "SELECT * FROM ".$tableString." WHERE hash='".$row['hash']."'";
                 $occurance = $db->query($sql);

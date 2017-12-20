@@ -3,13 +3,17 @@
     <?php
     require '../scripts/loggedVerify.php';
     require '../scripts/sessionActivation.php';
+    require '../scripts/cat.php';
+    require '../scripts/dashboardGetData.php';
+    
     ?>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel = "stylesheet" type="text/css" href="../../css/dashboard.css"></link>
+    <script type="text/javascript" src="../../js/dashboardData.js"></script>
 </head>
-<body class="background">
+<body class="background" onload="iterate(0,0,0,0,<?php echo $athletes.",".$gold.",".$silver.",".$bronze ?>);">
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -26,30 +30,124 @@
     </ul>
   </div>
 </nav>
-<!-- <div class="container-fluid">
+ <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3">
-           <div class="box">
-               ceva
+           <div class="statistics">
+                <div class="insideContentStatistics">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="info">
+                                    Total</br>Athletes
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="bar">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="entries">
+                                    <div id="Athletes"></div></br> <div class="quantity">Entries</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+           <div class="statistics gold">
+               <div class="insideContentStatistics">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="sup">
+                                    st
+                                </div>
+                                <div class="placeValue">
+                                    1
+                                </div>
+                                <div class="place">   
+                                    Place
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="bar">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="entries">
+                                    <div id="Gold"></div></br><div class="quantity">Medals</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
            </div>
         </div>
         <div class="col-sm-3">
-           <div class="box">
-               ceva
+           <div class="statistics silver">
+               <div class="insideContentStatistics">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="sup">
+                                    nd
+                                </div>
+                                <div class="placeValue">
+                                    2
+                                </div>
+                                <div class="place">   
+                                    Place
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="bar">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="entries">
+                                    <div id="Silver"></div></br><div class="quantity">Medals</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
            </div>
         </div>
         <div class="col-sm-3">
-           <div class="box">
-               ceva
-           </div>
-        </div>
-        <div class="col-sm-3">
-           <div class="box">
-               ceva
+           <div class="statistics bronze">
+               <div class="insideContentStatistics">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="sup">
+                                    rd
+                                </div>
+                                <div class="placeValue">
+                                    3
+                                </div>
+                                <div class="place">   
+                                    Place
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="bar">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="entries">
+                                    <div id="Bronze"></div></br><div class="quantity">Medals</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
            </div>
         </div>
     </div>
-</div> -->
+</div> 
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-6 col-md-3">

@@ -28,7 +28,7 @@
 
     $tableCat = "cattable".$name.$cat[$index];
     echo "<input type='text' name='cat' value='".$tableCat."' style='display:none;'></input>";
-    $sql = "SELECT * FROM ".$tableCluburi." RIGHT JOIN ".$tableCat." ON ".$tableCat.".club = ".$tableCluburi.".cluburiId WHERE ".$tableCluburi.".Nume='".$_SESSION['user']."'";
+    $sql = "SELECT * FROM ".$tableCluburi." RIGHT JOIN ".$tableCat." ON ".$tableCat.".club = ".$tableCluburi.".cluburiId ";
     $result = $db->query($sql);
     
         if ($result->num_rows > 0) 
