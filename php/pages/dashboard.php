@@ -37,7 +37,7 @@
                 <div class="insideContentStatistics">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="info">
                                     Total</br>Athletes
                                 </div>
@@ -46,7 +46,7 @@
                                 <div class="bar">
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                                 <div class="entries">
                                     <div id="Athletes"></div></br> <div class="quantity">Entries</div>
                                 </div>
@@ -61,7 +61,7 @@
                <div class="insideContentStatistics">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="sup">
                                     st
                                 </div>
@@ -76,7 +76,7 @@
                                 <div class="bar">
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                                 <div class="entries">
                                     <div id="Gold"></div></br><div class="quantity">Medals</div>
                                 </div>
@@ -91,7 +91,7 @@
                <div class="insideContentStatistics">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="sup">
                                     nd
                                 </div>
@@ -106,7 +106,7 @@
                                 <div class="bar">
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                                 <div class="entries">
                                     <div id="Silver"></div></br><div class="quantity">Medals</div>
                                 </div>
@@ -121,7 +121,7 @@
                <div class="insideContentStatistics">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <div class="sup">
                                     rd
                                 </div>
@@ -136,7 +136,7 @@
                                 <div class="bar">
                                 </div>
                             </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-6">
                                 <div class="entries">
                                     <div id="Bronze"></div></br><div class="quantity">Medals</div>
                                 </div>
